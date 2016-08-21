@@ -6,6 +6,11 @@
  */
 class RoboFile extends \Robo\Tasks
 {
+  /**
+   * Run unit and acceptance tests
+   * @param  string $pathToSelenium Path to Selenium jar
+   * @return void
+   */
   public function test ($pathToSelenium = '~/selenium.jar')
   {
     $this->taskServer(8080)
@@ -16,10 +21,31 @@ class RoboFile extends \Robo\Tasks
       ->run();
   }
 
+  /**
+   * Start a local server
+   * @return void
+   */
   public function serve ()
   {
     $this->taskServer(8080)
       ->dir('public')
+      ->run();
+  }
+
+  /**
+   * Process assets
+   * @return void
+   */
+  public function assets ()
+  {
+    $this->taskLess([
+        'assets/less/default.less' => 'public/css/default.css'
+      ])
+      ->importDir('assets/less')
+      ->compiler('lessphp')
+      ->run();
+
+    $this->taskMinify('public/css/default.css')
       ->run();
   }
 }
