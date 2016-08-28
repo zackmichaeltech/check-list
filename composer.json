@@ -4,13 +4,11 @@
     "keywords": ["checklists"],
     "homepage": "http://github.com/slimphp/Slim-Skeleton",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Torgny Bjers",
-            "email": "torgny.bjers@gmail.com",
-            "homepage": "http://torgnybjers.com/"
-        }
-    ],
+    "authors": [{
+        "name": "Torgny Bjers",
+        "email": "torgny.bjers@gmail.com",
+        "homepage": "http://torgnybjers.com/"
+    }],
     "require": {
         "php": ">=5.5.0",
         "slim/slim": "^3.1",
@@ -18,7 +16,9 @@
         "monolog/monolog": "^1.17"
     },
     "require-dev": {
+        "phpunit/dbunit": ">=1.2",
         "phpunit/phpunit": ">=4.8 < 6.0",
+        "phpunit/php-invoker": "*",
         "codegyre/robo": "*",
         "leafo/lessphp": "~0.5",
         "patchwork/jsqueeze": "~1.0",
