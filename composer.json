@@ -11,9 +11,10 @@
     }],
     "require": {
         "php": ">=5.5.0",
-        "slim/slim": "^3.1",
+        "slim/slim": "^3.5",
         "slim/php-view": "^2.0",
-        "monolog/monolog": "^1.17"
+        "monolog/monolog": "^1.17",
+        "jeremykendall/slim-auth": "dev-develop"
     },
     "require-dev": {
         "phpunit/dbunit": ">=1.2",
